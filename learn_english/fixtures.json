@@ -1,0 +1,21 @@
+[
+  {
+    "model": "exercises.Adverb",
+    "pk": 1,
+    "fields": {
+      "sentence": "He ... a book (to read)",
+      "answer": "reads",
+      "level": "A1"
+    }
+  },
+  {
+    "model": "exercises.Adverb",
+    "pk": 2,
+    "fields": {
+      "sentence": "She ... a letter (to write)",
+      "answer": "writes",
+      "level": "A1"
+    }
+  }
+
+]
