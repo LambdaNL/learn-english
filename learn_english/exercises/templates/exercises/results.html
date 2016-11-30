@@ -1,0 +1,10 @@
+{% extends 'exercises/index.html' %}
+{% block 'body' %}
+
+{% load django_tables2 %}
+
+<h1>Results</h1>
+{% render_table table %}
+
+
+{% endblock %}

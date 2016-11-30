@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn English</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">LearnEnglish!</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="{% url 'adverbs' A1%}">Adverbs</a></li>
+            <li><a href="{% url 'results' %}">Results</a></li>
+        </ul>
+    </nav>
+    <div class="row">
+        <div class="col-xs-12 center">
+            {% block 'body' %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
