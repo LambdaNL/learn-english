@@ -93,10 +93,6 @@ def results(request):
     unique_users = get_unique_usernames(Questionnaire.objects.all())
     table = QuestionnaireTable(Questionnaire.objects.all())
 
-    usernames = []
-    for result in results:
-        usernames += result.username
-
     return render_to_response("exercises/results.html", {"table": table},
                               context_instance=RequestContext(request))
 
