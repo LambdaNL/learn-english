@@ -1,0 +1,24 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="A1/" method="post">
+    {% csrf_token %}
+    <label>Username:</label>
+    <input type="text" name="username" />
+    <br />
+    <label>He ... reads a book (quickly):</label>
+    <input type="text" name="question_1" />
+    <br />
+    <label>Mandy is a ... girl. (pretty):</label>
+    <input type="text" name="question_2" />
+    <br />
+    <label>The class is ... loud today. (terrible):</label>
+    <input type="text" name="question_3" />
+    <br />
+    <label>Max is a ... singer. (good):</label>
+    <input type="text" name="question_4" />
+    <br />
+    <label>You can ... open this tin. (easy):</label>
+    <input type="text" name="question_5" />
+    <br />
+    <input type="submit" value="Submit" />
+</form>

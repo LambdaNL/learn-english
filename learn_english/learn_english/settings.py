@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'exercises.apps.LearnEnglish',
+    'django_tables2'
 ]
 
 MIDDLEWARE_CLASSES = [
