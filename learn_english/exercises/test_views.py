@@ -16,17 +16,17 @@ def add_middleware_to_response(request, middleware_class):
     return request
 
 
-class SavoryIceCreamTest(TestCase):
+class ViewsTest(TestCase):
 
     def setUp(self):
         self.factory = RequestFactory()
 
-    def test_cheese_flavors(self):
-        request = self.factory.get('/adverbs/A1')
+    def test_adverts(self):
+        request = self.factory.post('/adverbs/A1')
         request.user = AnonymousUser()
         # Annotate the request object with a session
         request = add_middleware_to_request(request, SessionMiddleware)
         request.session.save()
         # process and test the request
         response = adverbs(request, "A1")
-        self.assertContains(response, "bleah!")
+        self.assertContains(response, "Answers submitted!")
