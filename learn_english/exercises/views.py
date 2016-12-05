@@ -25,7 +25,7 @@ def adverbs(request, level):
             a1.save()
             return HttpResponse("Answers submitted!")
         else:
-            return render(request, 'exercises/A1.html')
+            return render(request, 'exercises/adverbs/A1.html')
     elif level == "A2":
         if request.method == 'POST':
             a2 = Questionnaire(
@@ -40,7 +40,7 @@ def adverbs(request, level):
             a2.save()
             return HttpResponse("Answers submitted!")
         else:
-            return render(request, 'exercises/A2.html')
+            return render(request, 'exercises/adverbs/A2.html')
     elif level == "B1":
         if request.method == 'POST':
             b1 = Questionnaire(
@@ -55,7 +55,7 @@ def adverbs(request, level):
             b1.save()
             return HttpResponse("Answers submitted!")
         else:
-            return render(request, 'exercises/B1.html')
+            return render(request, 'exercises/adverbs/B1.html')
     elif level == "B2":
         if request.method == 'POST':
             b2 = Questionnaire(
@@ -70,7 +70,7 @@ def adverbs(request, level):
             b2.save()
             return HttpResponse("Answers submitted!")
         else:
-            return render(request, 'exercises/B2.html')
+            return render(request, 'exercises/adverbs/B2.html')
     elif level == "C1":
         if request.method == 'POST':
             c1 = Questionnaire(
@@ -85,7 +85,7 @@ def adverbs(request, level):
             c1.save()
             return HttpResponse("Answers submitted!")
         else:
-            return render(request, 'exercises/C1.html')
+            return render(request, 'exercises/adverbs/C1.html')
     else:
         return render(request, 'exercises/adverbs.html')
 
