@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 
-from .models import Questionnaire, QuestionnaireTable
+from .models import QuestionnaireTable
 from .score_calculator import *
 
 
