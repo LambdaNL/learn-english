@@ -11,6 +11,7 @@ class Questionnaire(models.Model):
     question_4 = models.CharField(max_length=100)
     question_5 = models.CharField(max_length=100)
 
+
 class QuestionnaireTable(tables.Table):
     class Meta:
         model = Questionnaire
