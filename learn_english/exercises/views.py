@@ -11,10 +11,8 @@ def index(request):
 
 
 def exercise(request, level, name):
-    exercise_name = name
     if request.method != 'POST' and level != '':
-        level_url = 'exercises/' + exercise_name + '/' + level + '.html'
-        return render(request, level_url)
+        return render(request, 'exercises/' + name + '/' + level + '.html')
     elif request.method == 'POST':
         questionnaire_result = Questionnaire(
             level=level,
@@ -28,7 +26,7 @@ def exercise(request, level, name):
         questionnaire_result.save()
         return HttpResponse("Answers submitted!")
     else:
-        return render(request, 'exercises/' + exercise_name + '/' + exercise_name + '.html')
+        return render(request, 'exercises/' + name + '/' + name + '.html')
 
 
 def results(request):
