@@ -90,10 +90,29 @@ def adverbs(request, level):
         return render(request, 'exercises/adverbs.html')
 
 
+def verbs(request, level):
+    if request.method != 'POST' and level != '':
+        level_url = 'exercises/verbs/' + level + '.html'
+        return render(request, level_url)
+    elif request.method == 'POST':
+        questionnaire_result = Questionnaire(
+            level=level,
+            username=request.POST['username'],
+            question_1=request.POST['question_1_1'],
+            question_2=request.POST['question_2_1'],
+            question_3=request.POST['question_3_1'],
+            question_4=request.POST['question_4_1'],
+            question_5=request.POST['question_5_1'],
+        )
+        questionnaire_result.save()
+        return HttpResponse("Answers submitted!")
+    else:
+        return render(request, 'exercises/verbs/verbs.html')
+
+
 def results(request):
     unique_users = get_unique_usernames(Questionnaire.objects.all())
     table = QuestionnaireTable(Questionnaire.objects.all())
 
     return render_to_response("exercises/results.html", {"table": table},
                               context_instance=RequestContext(request))
-
