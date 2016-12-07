@@ -90,10 +90,89 @@ def adverbs(request, level):
         return render(request, 'exercises/adverbs.html')
 
 
+def verbs(request, level):
+    if level == "A1":
+        if request.method == 'POST':
+            a1 = Questionnaire(
+                level='A1',
+                username=request.POST['username'],
+                question_1=request.POST['question_1_1'],
+                question_2=request.POST['question_2_1'],
+                question_3=request.POST['question_3_1'],
+                question_4=request.POST['question_4_1'],
+                question_5=request.POST['question_5_1'],
+            )
+            a1.save()
+            return HttpResponse("Answers submitted!")
+        else:
+            return render(request, 'exercises/verbs/A1.html')
+    elif level == "A2":
+        if request.method == 'POST':
+            a2 = Questionnaire(
+                level='A2',
+                username=request.POST['username'],
+                question_1=request.POST['question_1_1'],
+                question_2=request.POST['question_2_1'],
+                question_3=request.POST['question_3_1'],
+                question_4=request.POST['question_4_1'],
+                question_5=request.POST['question_5_1'],
+            )
+            a2.save()
+            return HttpResponse("Answers submitted!")
+        else:
+            return render(request, 'exercises/verbs/A2.html')
+    elif level == "B1":
+        if request.method == 'POST':
+            b1 = Questionnaire(
+                level='B1',
+                username=request.POST['username'],
+                question_1=request.POST['question_1_1'],
+                question_2=request.POST['question_2_1'],
+                question_3=request.POST['question_3_1'],
+                question_4=request.POST['question_4_1'],
+                question_5=request.POST['question_5_1'],
+            )
+            b1.save()
+            return HttpResponse("Answers submitted!")
+        else:
+            return render(request, 'exercises/verbs/B1.html')
+    elif level == "B2":
+        if request.method == 'POST':
+            b2 = Questionnaire(
+                level='B2',
+                username=request.POST['username'],
+                question_1=request.POST['question_1_1'],
+                question_2=request.POST['question_2_1'],
+                question_3=request.POST['question_3_1'],
+                question_4=request.POST['question_4_1'],
+                question_5=request.POST['question_5_1'],
+            )
+            b2.save()
+            return HttpResponse("Answers submitted!")
+        else:
+            return render(request, 'exercises/verbs/B2.html')
+    elif level == "C1":
+        if request.method == 'POST':
+            c1 = Questionnaire(
+                level='C1',
+                username=request.POST['username'],
+                question_1=request.POST['question_1_1'],
+                question_2=request.POST['question_2_1'],
+                question_3=request.POST['question_3v'],
+                question_4=request.POST['question_4_1'],
+                question_5=request.POST['question_5_1'],
+            )
+            c1.save()
+            return HttpResponse("Answers submitted!")
+        else:
+            return render(request, 'exercises/verbs/C1.html')
+    else:
+        return render(request, 'exercises/verbs.html')
+
+
 def results(request):
     unique_users = get_unique_usernames(Questionnaire.objects.all())
     table = QuestionnaireTable(Questionnaire.objects.all())
 
     return render_to_response("exercises/results.html", {"table": table},
                               context_instance=RequestContext(request))
-
