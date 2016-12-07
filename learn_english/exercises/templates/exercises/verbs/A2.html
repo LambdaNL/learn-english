@@ -1,33 +1,38 @@
-{% extends 'exercises/adverbs/adverbs.html' %}
+{% extends 'exercises/verbs/verbs.html' %}
 {% block 'form' %}
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="A1/" method="post">
+<form action="/Adverb/a2/" method="post">
     {% csrf_token %}
     <div class="form-group">
-        <label>Username:</label> <br />
+        <label>Username:</label>
         <input type="text" name="username" />
     </div>
     <div class="form-group">
-        <label>He ... reads a book (quickly):</label> <br />
+        <label>catch -></label>
         <input type="text" name="question_1" />
+        <label>-> caught</label>
     </div>
     <div class="form-group">
-        <label>Mandy is a ... girl. (pretty):</label> <br />
+        <label>tell -></label>
         <input type="text" name="question_2" />
+        <label>-> told</label>
     </div>
     <div class="form-group">
-        <label>The class is ... loud today. (terrible):</label> <br />
+        <label>understand -></label>
         <input type="text" name="question_3" />
+        <label>-> understood</label>
     </div>
     <div class="form-group">
-        <label>Max is a ... singer. (good):</label> <br />
+        <label>cut -></label>
         <input type="text" name="question_4" />
+        <label>-> cut</label>
     </div>
     <div class="form-group">
-        <label>You can ... open this tin. (easy):</label> <br />
+        <label>ring -></label>
         <input type="text" name="question_5" />
+        <label>-> rang</label>
     </div>
     <input type="submit" value="Submit" />
 </form>

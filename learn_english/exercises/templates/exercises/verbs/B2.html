@@ -1,33 +1,38 @@
-{% extends 'exercises/adverbs/adverbs.html' %}
+{% extends 'exercises/verbs/verbs.html' %}
 {% block 'form' %}
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="A1/" method="post">
+<form action="B2/" method="post">
     {% csrf_token %}
     <div class="form-group">
         <label>Username:</label> <br />
         <input type="text" name="username" />
     </div>
     <div class="form-group">
-        <label>He ... reads a book (quickly):</label> <br />
+        <label>go -></label>
         <input type="text" name="question_1" />
+        <label>-> gone</label>
     </div>
     <div class="form-group">
-        <label>Mandy is a ... girl. (pretty):</label> <br />
+        <label>say -></label>
         <input type="text" name="question_2" />
+        <label>-> said</label>
     </div>
     <div class="form-group">
-        <label>The class is ... loud today. (terrible):</label> <br />
+        <label>do -></label>
         <input type="text" name="question_3" />
+        <label>-> done</label>
     </div>
     <div class="form-group">
-        <label>Max is a ... singer. (good):</label> <br />
+        <label>come -></label>
         <input type="text" name="question_4" />
+        <label>-> came</label>
     </div>
     <div class="form-group">
-        <label>You can ... open this tin. (easy):</label> <br />
+        <label>have -></label>
         <input type="text" name="question_5" />
+        <label>-> had</label>
     </div>
     <input type="submit" value="Submit" />
 </form>
