@@ -107,7 +107,7 @@ def verbs(request, level):
         questionnaire_result.save()
         return HttpResponse("Answers submitted!")
     else:
-        return render(request, 'exercises/verbs.html')
+        return render(request, 'exercises/verbs/verbs.html')
 
 
 def results(request):
