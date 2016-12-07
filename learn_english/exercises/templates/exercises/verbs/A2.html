@@ -1,0 +1,45 @@
+{% extends 'exercises/verbs.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/Adverb/a2/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Username:</label>
+        <input type="text" name="username" />
+    </div>
+    <div class="form-group">
+        <label>catch -></label>
+        <input type="text" name="question_1_1" />
+        <label>-></label>
+        <input type="text" name="question_1_2" />
+    </div>
+    <div class="form-group">
+        <label>tell -></label>
+        <input type="text" name="question_2_1" />
+        <label>-></label>
+        <input type="text" name="question_2_2" />
+    </div>
+    <div class="form-group">
+        <label>understand -></label>
+        <input type="text" name="question_3_1" />
+        <label>-></label>
+        <input type="text" name="question_3_2" />
+    </div>
+    <div class="form-group">
+        <label>cut -></label>
+        <input type="text" name="question_4_1" />
+        <label>-></label>
+        <input type="text" name="question_4_2" />
+    </div>
+    <div class="form-group">
+        <label>ring -></label>
+        <input type="text" name="question_5_1" />
+        <label>-></label>
+        <input type="text" name="question_5_2" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
