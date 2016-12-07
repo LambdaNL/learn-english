@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
 from django.template import RequestContext
 
 from .models import QuestionnaireTable
@@ -89,11 +89,30 @@ def adverbs(request, level):
     else:
         return render(request, 'exercises/adverbs.html')
 
+def gerund(request, level):
+	if level == "A1":
+		if request.method == 'POST':
+			a1 = Questionnaire(
+				level='A1',
+				username=request.POST['username'],
+				question_1=request.POST['question_1'],
+				question_2=request.POST['question_2'],
+				question_3=request.POST['question_3'],
+				question_4=request.POST['question_4'],
+				question_5=request.POST['question_5']
+			)
+			a1.save()
+			return render(request, 'exercises/gerund.html', {"result": "Answers submitted!"})
+		else:
+			return render(request, 'exercises/gerund/A1.html')
+	else:
+		return render(request, 'exercises/gerund.html')
 
 def results(request):
     unique_users = get_unique_usernames(Questionnaire.objects.all())
     table = QuestionnaireTable(Questionnaire.objects.all())
 
     return render_to_response("exercises/results.html", {"table": table},
-                              context_instance=RequestContext(request))
+                             context=RequestContext(request))
+    #return render_to_response("exercises/results.html", {"table": table})
 
