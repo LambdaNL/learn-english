@@ -1,0 +1,25 @@
+{% extends 'exercises/index.html' %}
+{% block 'body' %}
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a href="A1">A1</a></li>
+            <li><a href="A2">A2</a></li>
+            <li><a href="B1">B1</a></li>
+            <li><a href="B2">B2</a></li>
+            <li><a href="C1">C1</a></li>
+
+        </ul>
+    </nav>
+    <div class="form-group">
+        <p>Imperatives are verbs that direct you to do something. "<b>Do</b> this!" "<b>Get</b> that!" "Go <b>fix</b> your bike." etc.</p>
+        <p>They're not that hard. Now go <b>make</b> them!</p>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 center">
+            {% block 'form' %}
+            {% endblock %}
+        </div>
+    </div>
+
+{% endblock %}

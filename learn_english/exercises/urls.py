@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
     url(r'^adverbs/(?P<level>A1|A2|B1|B2|C1|.*)', views.adverbs, name='adverbs'),
+    url(r'^imperatives/(?P<level>A1|A2|B1|B2|C1|.*)', views.imperatives, name='imperatives'),
     url(r'^results/', views.results, name='results'),
 
 ]
