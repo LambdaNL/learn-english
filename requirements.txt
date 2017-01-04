@@ -1,2 +1,5 @@
 Django==1.9.8
 django-tables2==1.2.6
+django-jenkins==0.110.0
+pep8==1.7.0
+pyflakes==1.4.0
