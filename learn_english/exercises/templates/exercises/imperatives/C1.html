@@ -3,30 +3,31 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="A2/" method="post">
+<form action="C1/" method="post">
     {% csrf_token %}
     <div class="form-group">
         <label>Username:</label> <br />
         <input type="text" name="username" />
     </div>
     <div class="form-group">
-        <label>Don't ... the plates. (breaking):</label> <br />
+        <label>... yourself of success first. (Ascertaining):</label> <br />
         <input type="text" name="question_1" />
     </div>
     <div class="form-group">
-        <label>... the bath. (Draining):</label> <br />
+        <label>... some more money to development next year. (Allocating):</label> <br />
         <input type="text" name="question_2" />
     </div>
     <div class="form-group">
-        <label>... your teeth. (brushing):</label> <br />
-        <input type="text" name="question_3" />
+        <label>Don't ... and ... on this banana peel. (Slipping, Sliding):</label> <br />
+        <input type="text" name="question_3a" />
+        <input type="text" name="question_3b" />
     </div>
     <div class="form-group">
-        <label>Do ... my invitation. (accepting):</label> <br />
+        <label>'Go ... your hair, ... the dishes, ... the laundry', it's always something with her! (Doing):</label> <br />
         <input type="text" name="question_4" />
     </div>
     <div class="form-group">
-        <label>Don't ... indoors. (yelling):</label> <br />
+        <label>You should ... him into doing it for you. (pressuring):</label> <br />
         <input type="text" name="question_5" />
     </div>
     <input type="submit" value="Submit" />
