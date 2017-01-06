@@ -1,46 +1,35 @@
-import json
-from django.test import TestCase, RequestFactory
-from django.core.urlresolvers import reverse
-from django.contrib.sessions.middleware import SessionMiddleware
+from django.test import TestCase
+from . import models
+from django.test import Client
 
 
-def add_middleware_to_request(request, middleware_class):
-    middleware = middleware_class()
-    middleware.process_request(request)
-    return request
-
-
-def add_middleware_to_response(response, middleware_class):
-    middleware = middleware_class()
-    middleware.process_request(response)
-    return response
-
-
-class ViewsTests(TestCase):
-
+class AdverbsTestCase(TestCase):
     def setUp(self):
-        self.response = self.client.get("/adverbs/")
-        self.data = {
-            "cdsfmiddlewaretoken": "foo",
-            "username": "foo",
-            "question_1": "foo",
-            "question_2": "foo",
-            "question_3": "foo",
-            "question_4": "foo",
-            "question_5": "foo"
-        }
+        self.client = Client()
+        models.OpenQuestion.objects.create(category="A1", question="He ... reads a book (quick):", answer="quickly")
+        models.FilledOpenQuestion.objects.create(username="foo", question="He ... reads a book (quick):", answer="quickly")
 
-    def test_adverbs_response(self):
-        self.assertEquals(self.response.status_code, 200)
+    def test_store_questions(self):
+        """Test relevant models"""
+        open_question = models.OpenQuestion.objects.get(question="He ... reads a book (quick):")
+        filled_open_question = models.FilledOpenQuestion.objects.get(question="He ... reads a book (quick):")
+        self.assertEqual(open_question.question, "He ... reads a book (quick):")
+        self.assertNotEqual(open_question.question, "bar")
+        self.assertNotEqual(filled_open_question.username, "baz")
 
-    def test_adverbs_menu(self):
-        self.assertContains(self.response, "A1")
-        self.assertContains(self.response, "A2")
-        self.assertContains(self.response, "B1")
-        self.assertContains(self.response, "B2")
-        self.assertContains(self.response, "C1")
+    def test_render_questions(self):
+        """Test question rendering"""
+        response = self.client.get('/adverbs/A1')
+        content = response.content
+        self.assertTrue("He ... reads a book (quick):" in str(content))
 
-    def test_valid_A1_submission(self):
-        form_submission = self.client.post("/adverbs/A1/", self.data)
-        # data = json.loads(form_submission.content)
-        self.assertEquals(form_submission.status_code, 201)
+    def test_answer_submission(self):
+        """Test submission of answers"""
+        self.client.post('/adverbs/A1', {'username': 'rare', '1': 'foo', '2': 'bar'})
+        query = models.FilledOpenQuestion.objects.filter(username='rare')
+        self.assertNotEqual(0, query.count())
+
+
+
+
+

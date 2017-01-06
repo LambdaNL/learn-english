@@ -3,32 +3,17 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="A1/" method="post">
-    {% csrf_token %}
+<form action="" method="post">{% csrf_token %}
     <div class="form-group">
-        <label>Username:</label> <br />
-        <input type="text" name="username" />
-    </div>
-    <div class="form-group">
-        <label>He ... reads a book (quickly):</label> <br />
-        <input type="text" name="question_1" />
-    </div>
-    <div class="form-group">
-        <label>Mandy is a ... girl. (pretty):</label> <br />
-        <input type="text" name="question_2" />
-    </div>
-    <div class="form-group">
-        <label>The class is ... loud today. (terrible):</label> <br />
-        <input type="text" name="question_3" />
-    </div>
-    <div class="form-group">
-        <label>Max is a ... singer. (good):</label> <br />
-        <input type="text" name="question_4" />
-    </div>
-    <div class="form-group">
-        <label>You can ... open this tin. (easy):</label> <br />
-        <input type="text" name="question_5" />
-    </div>
+    <label>Username:</label> <br />
+    <input type="text" name="username" required>
+</div>
+        {% for oq in open_questions %}
+        <div class="form-group">
+            <label>{{ oq.question }}</label> <br />
+            <input type="text" name="{{oq.pk}}" required>
+        </div>
+        {% endfor %}
     <input type="submit" value="Submit" />
 </form>
 

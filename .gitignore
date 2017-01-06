@@ -79,6 +79,8 @@ celerybeat-schedule
 # dotenv
 .env
 
+exercises/migrations/*
+
 # virtualenv
 venv/
 ENV/
@@ -89,4 +91,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
+.idea
 db.sqlite3
+learn_english/exercises/migrations/0005_filledopenquestion_multiplechoice_openquestion_user.py
+learn_english/exercises/migrations/0006_auto_20170106_0342.py
+learn_english/exercises/migrations/0007_auto_20170106_0348.py
