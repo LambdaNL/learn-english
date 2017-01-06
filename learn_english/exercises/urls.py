@@ -24,5 +24,6 @@ urlpatterns = [
     url(r"^adverbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.adverbs, name='adverbs'),
     url(r"^verbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.verbs, name='verbs'),
     url(r"^imperatives/(?P<level>A1|A2|B1|B2|C1|.*)", views.imperatives, name='imperatives'),
+    url(r"^quantifiers/(?P<level>A1|A2|B1|B2|C1|.*)", views.quantifiers, name='quantifiers'),
     url(r'^results/', views.results, name='results'),
 ]
