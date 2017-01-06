@@ -3,26 +3,17 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="/Adverb/a2/" method="post">
-    {% csrf_token %}
-    <label>Username:</label>
-    <input type="text" name="username" />
-    <br />
-    <label>The bus driver was injured. (serious):</label>
-    <input type="text" name="question_1" />
-    <br />
-    <label>Kevin is clever. (extreme):</label>
-    <input type="text" name="question_2" />
-    <br />
-    <label>This hamburger tastes . (awful):</label>
-    <input type="text" name="question_3" />
-    <br />
-    <label>Be with this glass of milk. It's hot. (careful):</label>
-    <input type="text" name="question_4" />
-    <br />
-    <label>Robin looks . What's the matter with him? (sad):</label>
-    <input type="text" name="question_5" />
-    <br />
+<form action="" method="post">{% csrf_token %}
+    <div class="form-group">
+    <label>Username:</label> <br />
+    <input type="text" name="username" required>
+</div>
+        {% for oq in open_questions %}
+        <div class="form-group">
+            <label>{{ oq.question }}</label> <br />
+            <input type="text" name="{{oq.pk}}" required>
+        </div>
+        {% endfor %}
     <input type="submit" value="Submit" />
 </form>
 
