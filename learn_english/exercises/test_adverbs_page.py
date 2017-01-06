@@ -34,13 +34,13 @@ class AdverbsTestCase(TestCase):
         self.assertTrue("We watched ... (attentive):" in str(content))
 
     def test_answer_submission_A1(self):
-        """Test submission of answers A1"""
+        """Test submission for answering A1"""
         self.client.post('/adverbs/A1', {'username': 'rare', '1': 'foo', '2': 'bar'})
         query = models.FilledOpenQuestion.objects.filter(username='rare')
         self.assertNotEqual(0, query.count())
 
     def test_answer_submission_A2(self):
-        """Test submission of answers A2"""
+        """Test submission for answering A2"""
         self.client.post('/adverbs/A2', {'username': 'rare', '1': 'foo', '2': 'bar'})
         query = models.FilledOpenQuestion.objects.filter(username='rare')
         self.assertNotEqual(0, query.count())
