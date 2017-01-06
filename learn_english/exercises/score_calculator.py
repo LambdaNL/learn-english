@@ -26,3 +26,4 @@ def get_incorrect_amount(username):
         if question.answer != correct_answer.answer:
             total_incorrect += 1
     return total_incorrect
+

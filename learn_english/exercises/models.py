@@ -32,7 +32,8 @@ class MultipleChoice(models.Model):
 
 class UserScore(models.Model):
     username = models.CharField(max_length=20, primary_key=True)
-    totalCorrect = models.IntegerField()
-    totalIncorrect = models.IntegerField()
+    totalCorrect = models.IntegerField(default=0)
+    totalIncorrect = models.IntegerField(default=0)
+    score = models.FloatField(default=0)
 
 
