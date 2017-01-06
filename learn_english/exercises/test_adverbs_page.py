@@ -1,5 +1,5 @@
 from django.test import TestCase
-from . import models
+from . import models, score_calculator
 from django.test import Client
 
 
@@ -11,6 +11,8 @@ class AdverbsTestCase(TestCase):
         models.FilledOpenQuestion.objects.create(username="foo", question="He ... reads a book (quick):",
                                                  answer="quickly")
         models.FilledOpenQuestion.objects.create(username="foo", question="We watched ... (attentive):",
+                                                 answer="attentively")
+        models.FilledOpenQuestion.objects.create(username="bar", question="We watched ... (attentive):",
                                                  answer="attentively")
 
     def test_store_questions(self):
@@ -45,3 +47,13 @@ class AdverbsTestCase(TestCase):
         query = models.FilledOpenQuestion.objects.filter(username='rare')
         self.assertNotEqual(0, query.count())
 
+    def test_get_unique_names(self):
+        names = models.FilledOpenQuestion.objects.all()
+        unique_names = score_calculator.get_unique_usernames(names)
+        self.assertEquals(2, len(unique_names))
+
+    def test_get_correct_amount(self):
+        self.assertEquals(2, score_calculator.get_correct_amount('foo'))
+
+    def test_get_incorrect_amount(self):
+        self.assertEquals(0, score_calculator.get_incorrect_amount('foo'))

@@ -2,8 +2,20 @@
 {% block 'body' %}
 
 <h1>Results</h1>
-{% for user in users %}
-    <p>{{user.username}}, {{user.totalCorrect}}, {{user.totalIncorrect}}</p>
-{% endfor %}
-
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Usernames</th>
+        <th>Total correct</th>
+        <th>Total incorrect</th>
+      </tr>
+    </thead>
+    {% for user in users %}
+    <tr>
+        <td>{{user.username}}</td>
+        <td>{{user.totalCorrect}}</td>
+        <td>{{user.totalIncorrect}}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

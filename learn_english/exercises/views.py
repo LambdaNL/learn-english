@@ -58,18 +58,18 @@ def results(request):
 
     for user in unique_users:
         all_questions = models.FilledOpenQuestion.objects.filter(username=user)
-        correct = 0
-        incorrect = 1
-        for question in all_questions:
-            if find_correct_answer(question) == question['answer']:
-                correct += 1
-            else:
-                incorrect += 1
-        new_user = models.UserScore.objects.create(username=user, totalCorrect=correct, totalIncorrect=incorrect)
+        correct_amount = get_correct_amount(all_questions)
+        incorrect_amount = get_incorrect_amount(all_questions)
+
+        get
+        new_user = models.UserScore.objects.create(username=user, totalCorrect=0, totalIncorrect=0)
+        new_user.totalCorrect = correct_amount
+        new_user.totalInCorrect = incorrect_amount
         new_user.save()
 
     return render_to_response("exercises/results.html", {"users": models.UserScore.objects.all()},
                               context_instance=RequestContext(request))
 
+
 def find_correct_answer(question):
-    return models.OpenQuestion.objects.get(question)
+    return models.OpenQuestion.objects.get(question=question)

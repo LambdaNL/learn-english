@@ -1,5 +1,4 @@
 from django.db import models
-import django_tables2 as tables
 
 
 class Questionnaire(models.Model):
@@ -12,14 +11,9 @@ class Questionnaire(models.Model):
     question_5 = models.CharField(max_length=100)
 
 
-class QuestionnaireTable(tables.Table):
-    class Meta:
-        model = Questionnaire
-
-
 class OpenQuestion(models.Model):
     category = models.CharField(max_length=2)
-    question = models.CharField(max_length=100)
+    question = models.CharField(max_length=100, primary_key=True)
     answer = models.CharField(max_length=100)
 
 
@@ -37,6 +31,8 @@ class MultipleChoice(models.Model):
 
 
 class UserScore(models.Model):
-    username = models.CharField(max_length=20)
+    username = models.CharField(max_length=20, primary_key=True)
     totalCorrect = models.IntegerField(default=0)
     totalIncorrect = models.IntegerField(default=0)
+
+
