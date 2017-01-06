@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r"^exercise/(?P<name>verbs|adverbs|imperatives)/(?P<level>A1|A2|B1|B2|C1|.*)", views.exercise, name='exercise'),
+    url(r"^exercise/(?P<name>verbs|adverbs|imperatives|quantifiers)/(?P<level>A1|A2|B1|B2|C1|.*)", views.exercise, name='exercise'),
     url(r"^adverbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.adverbs, name='adverbs'),
     url(r"^verbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.verbs, name='verbs'),
     url(r"^imperatives/(?P<level>A1|A2|B1|B2|C1|.*)", views.imperatives, name='imperatives'),
