@@ -1,5 +1,6 @@
 from .models import Questionnaire
 
+
 def get_unique_usernames(results):
     usernames = []
     for result in results:

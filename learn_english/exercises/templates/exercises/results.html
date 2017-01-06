@@ -1,10 +1,9 @@
 {% extends 'exercises/index.html' %}
 {% block 'body' %}
 
-{% load django_tables2 %}
-
 <h1>Results</h1>
-{% render_table table %}
-
+{% for user in users %}
+    <p>{{user.username}}, {{user.totalCorrect}}, {{user.totalIncorrect}}</p>
+{% endfor %}
 
 {% endblock %}
