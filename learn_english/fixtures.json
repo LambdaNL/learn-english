@@ -1,21 +1,22 @@
 [
   {
-    "model": "exercises.Adverb",
+    "model": "exercises.OpenQuestion",
     "pk": 1,
     "fields": {
-      "sentence": "He ... a book (to read)",
-      "answer": "reads",
-      "level": "A1"
+      "category": "A1",
+      "question": "He ... a book (to read)",
+      "answer": "reads"
     }
   },
   {
-    "model": "exercises.Adverb",
+    "model": "exercises.OpenQuestion",
     "pk": 2,
     "fields": {
-      "sentence": "She ... a letter (to write)",
-      "answer": "writes",
-      "level": "A1"
+      "category": "A2",
+      "question": "She ... a letter (to write)",
+      "answer": "writes"
     }
   }
+
 
 ]
