@@ -59,13 +59,15 @@ def results(request):
     for user in unique_users:
 
         if len(models.UserScore.objects.filter(username=user)) == 0:
-            models.UserScore.objects.create(username=user, totalCorrect=0, totalIncorrect=0)
+            models.UserScore.objects.create(username=user, totalCorrect=0, totalIncorrect=0, score=0)
 
         else:
             correct_amount = get_correct_amount(user)
             incorrect_amount = get_incorrect_amount(user)
+            score = correct_amount - incorrect_amount
             models.UserScore.objects.filter(username=user).update(totalCorrect=correct_amount,
-                                                                  totalIncorrect=incorrect_amount)
+                                                                  totalIncorrect=incorrect_amount,
+                                                                  score=score)
 
     return render_to_response("exercises/results.html", {"users": models.UserScore.objects.all()},
                               context_instance=RequestContext(request))

@@ -2,12 +2,14 @@
 {% block 'body' %}
 
 <h1>Results</h1>
+<h3>Adverts Results:</h3>
 <table class="table table-striped">
     <thead>
       <tr>
         <th>Usernames</th>
         <th>Total correct</th>
         <th>Total incorrect</th>
+        <th>Score</th>
       </tr>
     </thead>
     {% for user in users %}
@@ -15,6 +17,7 @@
         <td>{{user.username}}</td>
         <td>{{user.totalCorrect}}</td>
         <td>{{user.totalIncorrect}}</td>
+        <td>{{user.score}}</td>
     </tr>
     {% endfor %}
 </table>
