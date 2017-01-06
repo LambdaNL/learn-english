@@ -53,7 +53,7 @@ class AdverbsTestCase(TestCase):
         self.assertEquals(2, len(unique_names))
 
     def test_get_correct_amount(self):
-        self.assertEquals(2, score_calculator.get_correct_amount('foo'))
+       self.assertEquals(2, score_calculator.get_correct_amount('foo'))
 
     def test_get_incorrect_amount(self):
-        self.assertEquals(0, score_calculator.get_incorrect_amount('foo'))
+       self.assertEquals(0, score_calculator.get_incorrect_amount('foo'))
