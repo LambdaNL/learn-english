@@ -23,5 +23,4 @@ urlpatterns = [
     url(r"^exercise/(?P<name>verbs|adverbs)/(?P<level>A1|A2|B1|B2|C1|.*)", views.exercise, name='exercise'),
     url(r"^adverbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.adverbs, name='adverbs'),
     url(r'^results/', views.results, name='results'),
-
 ]

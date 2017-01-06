@@ -71,6 +71,5 @@ def results(request):
     return render_to_response("exercises/results.html", {"users": models.UserScore.objects.all()},
                               context_instance=RequestContext(request))
 
-
 def find_correct_answer(question):
     return models.OpenQuestion.objects.get(question)
