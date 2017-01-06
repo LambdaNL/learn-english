@@ -1,0 +1,30 @@
+{% extends 'exercises/gerund/gerund.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="A2/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Username:</label> <br />
+        <input type="text" name="username" />
+    </div>
+    <div class="form-group">
+        <label>I'm afraid of <input type="text" name="question_1" /> my smartphone (to lose)</label> <br />
+    </div>
+    <div class="form-group">
+        <label>She's looking forward to <input type="text" name="question_2" /> her brother (to see)</label> <br />
+    </div>
+    <div class="form-group">
+        <label>He is responsible for <input type="text" name="question_3" /> the money (to collect) <label> <br />
+    </div>
+    <div class="form-group">
+        <label>She is used to <input type="text" name="question_4" /> to bed late (to go)</label> <br />
+    </div>
+    <div class="form-group">
+        <label>We are tired of  <input type="text" name="question_5" />for the bus (to wait)</label> <br />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
