@@ -52,6 +52,30 @@ def adverbs(request, level):
     else:
         return render(request, 'exercises/adverbs/adverbs.html')
 
+#gerund
+def gerund(request, level):
+    print(level)
+    if request.method != 'POST' and level != '':
+        return render_to_response('exercises/gerund/' + level + '.html',
+                                  {'open_questions': models.OpenQuestion.objects.filter(category=str(level))},
+                                  context_instance=RequestContext(request))
+
+    elif request.method == 'POST':
+        for q in models.OpenQuestion.objects.filter(category=str(level)):
+            if request.POST[str(q.pk)] != '':
+                foq = models.FilledOpenQuestion(
+                    username=request.POST['username'],
+                    question=q.question,
+                    answer=request.POST[str(q.pk).lower()])
+                foq.save()
+            else:
+                render_to_response('exercises/gerund/' + level + '.html',
+                                   {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                   context_instance=RequestContext(request))
+
+        return render_to_response('exercises/index.html', context_instance=RequestContext(request))
+    else:
+        return render(request, 'exercises/gerund/gerund.html')
 
 def results(request):
     unique_users = get_unique_usernames(models.FilledOpenQuestion.objects.all())
@@ -72,3 +96,32 @@ def results(request):
     return render_to_response("exercises/results.html", {"users": models.UserScore.objects.all()},
                               context_instance=RequestContext(request))
 
+
+def startg(request):
+    models.OpenQuestion.objects.create(category="A1" , question="My friend is good ... playing volleyball." , answer="at")
+    models.OpenQuestion.objects.create(category="A1" , question="She complains ... playing volleyball.", answer="about")
+    models.OpenQuestion.objects.create(category="A1" , question="They are afraid ... losing the match." , answer="of")
+    models.OpenQuestion.objects.create(category="A1" , question="She doesn't feel ... working on the computer." , answer="like")
+    models.OpenQuestion.objects.create(category="A1" , question="We are looking forward ... going out in the weekend.", answer="to")
+    # models.gOpenQuestion.objects.create(level="A2" , question=1, answer="losing")
+    # models.gOpenQuestion.objects.create(level="A2" , question=2, answer="seeing")
+    # models.gOpenQuestion.objects.create(level="A2" , question=3, answer="collecting")
+    # models.gOpenQuestion.objects.create(level="A2" , question=4, answer="going")
+    # models.gOpenQuestion.objects.create(level="A2" , question=5, answer="waiting")
+    # models.gOpenQuestion.objects.create(level="B1" , question=1, answer="of")
+    # models.gOpenQuestion.objects.create(level="B1" , question=2, answer="of")
+    # models.gOpenQuestion.objects.create(level="B1" , question=3, answer="of")
+    # models.gOpenQuestion.objects.create(level="B1" , question=4, answer="on")
+    # models.gOpenQuestion.objects.create(level="B1" , question=5, answer="on")
+    # models.gOpenQuestion.objects.create(level="B2" , question=1, answer="at")
+    # models.gOpenQuestion.objects.create(level="B2" , question=2, answer="of")
+    # models.gOpenQuestion.objects.create(level="B2" , question=3, answer="about")
+    # models.gOpenQuestion.objects.create(level="B2" , question=4, answer="of")
+    # models.gOpenQuestion.objects.create(level="B2" , question=5, answer="in")
+    # models.gOpenQuestion.objects.create(level="C1" , question=1, answer="going")
+    # models.gOpenQuestion.objects.create(level="C1" , question=2, answer="to buy")
+    # models.gOpenQuestion.objects.create(level="C1" , question=3, answer="to get")
+    # models.gOpenQuestion.objects.create(level="C1" , question=4, answer="seeing")
+    # models.gOpenQuestion.objects.create(level="C1" , question=5, answer="to run")
+    
+    return HttpResponse("Answers for Gerund added to DB!")

@@ -1,0 +1,38 @@
+{% extends 'exercises/gerund/gerund.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="C1/" method="post">
+    {% csrf_token %}
+    
+    Put in the verbs in brackets in the Gerund or the to-infinitive.
+
+    <div class="form-group">
+        <label>Username:</label> <br />
+        <input type="text" name="username" />
+    </div>
+    <div class="form-group">
+        <label>I can't imagine Peter <input type="text" name="question_1" /> (go) by bike.</label> <br />
+    </div>
+    <!-- going -->
+    <div class="form-group">
+        <label>He agreed <input type="text" name="question_2" /> (buy) a new car.</label> <br />
+    </div>
+    <!-- to buy -->
+    <div class="form-group">
+        <label>The man asked me how <input type="text" name="question_3" /> (get) to the airport. </label> <br />
+    </div>
+    <!-- to get -->
+    <div class="form-group">
+        <label>I look forward to <input type="text" name="question_4" /> (see) you at the weekend.</label> <br />
+    </div>
+    <!-- seeing -->
+    <div class="form-group">
+        <label>We decided <input type="text" name="question_5" /> (run) through the forest.</label> <br />
+    </div>
+    <!-- to run -->
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

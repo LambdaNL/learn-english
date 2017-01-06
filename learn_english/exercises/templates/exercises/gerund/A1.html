@@ -1,0 +1,21 @@
+{% extends 'exercises/gerund/gerund.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="A1/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Username:</label> <br />
+        <input type="text" name="username" required/>
+    </div>
+		{% for oq in open_questions %}
+        <div class="form-group">
+            <label>{{ oq.question }}</label> <br />
+            <input type="text" name="{{oq.pk}}" required>
+        </div>
+        {% endfor %}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
