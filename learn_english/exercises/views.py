@@ -10,6 +10,7 @@ def index(request):
     return render(request, 'exercises/index.html')
 
 
+
 def exercise(request, level, name):
     if request.method != 'POST' and level != '':
         return render(request, 'exercises/' + name + '/' + level + '.html')
@@ -29,6 +30,7 @@ def exercise(request, level, name):
         return render(request, 'exercises/' + name + '/' + name + '.html')
 
 
+# adverbs
 def adverbs(request, level):
     if request.method != 'POST' and level != '':
         return render_to_response('exercises/adverbs/' + level + '.html',
@@ -51,6 +53,57 @@ def adverbs(request, level):
         return render_to_response('exercises/index.html', context_instance=RequestContext(request))
     else:
         return render(request, 'exercises/adverbs/adverbs.html')
+
+
+# verbs
+def verbs(request, level):
+    if request.method != 'POST' and level != '':
+        return render_to_response('exercises/verbs/' + level + '.html',
+                                  {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                  context_instance=RequestContext(request))
+
+    elif request.method == 'POST':
+        for q in models.OpenQuestion.objects.filter(category=level):
+            if request.POST[str(q.pk)] != '':
+                foq = models.FilledOpenQuestion(
+                    username=request.POST['username'],
+                    question=q.question,
+                    answer=request.POST[str(q.pk)])
+                foq.save()
+            else:
+                render_to_response('exercises/verbs/' + level + '.html',
+                                   {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                   context_instance=RequestContext(request))
+
+        return render_to_response('exercises/index.html', context_instance=RequestContext(request))
+    else:
+        return render(request, 'exercises/verbs/verbs.html')
+
+
+# imperatives
+def imperatives(request, level):
+    if request.method != 'POST' and level != '':
+        return render_to_response('exercises/imperatives/' + level + '.html',
+                                  {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                  context_instance=RequestContext(request))
+
+    elif request.method == 'POST':
+        for q in models.OpenQuestion.objects.filter(category=level):
+            if request.POST[str(q.pk)] != '':
+                foq = models.FilledOpenQuestion(
+                    username=request.POST['username'],
+                    question=q.question,
+                    answer=request.POST[str(q.pk)])
+                foq.save()
+            else:
+                render_to_response('exercises/imperatives/' + level + '.html',
+                                   {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                   context_instance=RequestContext(request))
+
+        return render_to_response('exercises/index.html', context_instance=RequestContext(request))
+    else:
+        return render(request, 'exercises/imperatives/imperatives.html')
+
 
 
 def results(request):

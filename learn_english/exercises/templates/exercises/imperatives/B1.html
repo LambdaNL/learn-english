@@ -1,0 +1,35 @@
+{% extends 'exercises/imperatives.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="B1/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Username:</label> <br />
+        <input type="text" name="username" />
+    </div>
+    <div class="form-group">
+        <label>Don't ... the house while I'm gone. (Destroying):</label> <br />
+        <input type="text" name="question_1" />
+    </div>
+    <div class="form-group">
+        <label>Be sure to ... in all the cables. (Plugging):</label> <br />
+        <input type="text" name="question_2" />
+    </div>
+    <div class="form-group">
+        <label>... for help if you need any. (Calling):</label> <br />
+        <input type="text" name="question_3" />
+    </div>
+    <div class="form-group">
+        <label>... yourself. (Applying):</label> <br />
+        <input type="text" name="question_4" />
+    </div>
+    <div class="form-group">
+        <label>... a pose! (Striking):</label> <br />
+        <input type="text" name="question_5" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
