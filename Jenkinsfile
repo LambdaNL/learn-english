@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-		sh 'cd learn_english/'
-                sh 'python3 manage.py test'
-		sh 'python3 manage.py runserver'
+                sh 'python3 ./learn_english/manage.py test'
+		sh 'python3 ./learn_english/manage.py runserver'
             }
         }
     }
