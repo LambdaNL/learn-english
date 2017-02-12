@@ -12,8 +12,8 @@ pipeline {
 post {
         success {
             sh 'git merge origin/development'
-	    sh 'git commit -am "Merged development branch to master'
-	    sh 'git push origin master'
+	    sh 'git commit -am "Merged development branch to master"'
+    	    sh 'git push origin master'
         }
         failure {
             sh 'echo Build failed!'
