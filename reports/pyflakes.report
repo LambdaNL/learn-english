@@ -1,0 +1,43 @@
+../../.local/lib/python3.5/site-packages/django/contrib/messages/__init__.py:1: [E] PYFLAKES:'from django.contrib.messages.api import *' used; unable to detect undefined names
+../../.local/lib/python3.5/site-packages/django/contrib/messages/__init__.py:1: [E] PYFLAKES:'django.contrib.messages.api.*' imported but unused
+../../.local/lib/python3.5/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'from django.contrib.messages.constants import *' used; unable to detect undefined names
+../../.local/lib/python3.5/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'django.contrib.messages.constants.*' imported but unused
+learn_english/exercises/views.py:6: [E] PYFLAKES:'from .score_calculator import *' used; unable to detect undefined names
+learn_english/exercises/views.py:17: [E] PYFLAKES:'Questionnaire' may be undefined, or defined from star imports: [E] PYFLAKES:.score_calculator
+learn_english/exercises/views.py:57: [E] PYFLAKES:'get_unique_usernames' may be undefined, or defined from star imports: [E] PYFLAKES:.score_calculator
+learn_english/exercises/views.py:65: [E] PYFLAKES:'get_correct_amount' may be undefined, or defined from star imports: [E] PYFLAKES:.score_calculator
+learn_english/exercises/views.py:66: [E] PYFLAKES:'get_incorrect_amount' may be undefined, or defined from star imports: [E] PYFLAKES:.score_calculator
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:2: [E] PYFLAKES:'.tables.Table' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:2: [E] PYFLAKES:'.tables.TableBase' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.CheckBoxColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.DateTimeColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.BooleanColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.Column' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.RelatedLinkColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.FileColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.URLColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.TemplateColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.LinkColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.DateColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.TimeColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:3: [E] PYFLAKES:'.columns.EmailColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:6: [E] PYFLAKES:'.config.RequestConfig' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:7: [E] PYFLAKES:'.utils.A' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:8: [E] PYFLAKES:'.views.SingleTableView' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:8: [E] PYFLAKES:'.views.MultiTableMixin' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/__init__.py:8: [E] PYFLAKES:'.views.SingleTableMixin' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:1: [E] PYFLAKES:'.base.BoundColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:1: [E] PYFLAKES:'.base.Column' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:1: [E] PYFLAKES:'.base.library' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:1: [E] PYFLAKES:'.base.BoundColumns' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:2: [E] PYFLAKES:'.booleancolumn.BooleanColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:3: [E] PYFLAKES:'.checkboxcolumn.CheckBoxColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:4: [E] PYFLAKES:'.datecolumn.DateColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:5: [E] PYFLAKES:'.datetimecolumn.DateTimeColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:6: [E] PYFLAKES:'.emailcolumn.EmailColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:7: [E] PYFLAKES:'.filecolumn.FileColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:8: [E] PYFLAKES:'.linkcolumn.RelatedLinkColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:8: [E] PYFLAKES:'.linkcolumn.LinkColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:9: [E] PYFLAKES:'.templatecolumn.TemplateColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:10: [E] PYFLAKES:'.urlcolumn.URLColumn' imported but unused
+../../../../usr/local/lib/python3.5/dist-packages/django_tables2/columns/__init__.py:11: [E] PYFLAKES:'.timecolumn.TimeColumn' imported but unused
