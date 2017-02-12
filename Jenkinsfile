@@ -1,19 +1,10 @@
 pipeline {
-    agent any
+    agent { docker 'python:3.5.1' }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                sh 'python3 manage.py test'
- 		sh 'python3 manage.py runserver'
+                sh 'python --version'
             }
-        }
-    }
-    post {
-        success {
-            sh 'echo push to master'
-        }
-        failure {
-            sh 'echo This will run only if failed'
         }
     }
 }
