@@ -13,12 +13,10 @@ post {
         success {
             sh 'git merge development'
 	    sh 'git commit -am "Merged development branch to master'
-	    sh "git push origin master"
+	    sh 'git push origin master'
         }
         failure {
-            mail to: '0851967@hr.nl',
-		 subject: "The Pipeline failed :("		
-		 body: "Something is wrong with learn-english"
+            sh 'echo "Build failed!"'
         }
     }
 }
