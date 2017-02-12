@@ -15,7 +15,7 @@ post {
 	sh 'git config --global user.name "HRO"'
 	sh 'git checkout master'
 	sh 'git pull origin master'
-	sh 'git merge development'
+	sh 'git merge origin/development'
 	sh 'git push origin master'
         }
         failure {
