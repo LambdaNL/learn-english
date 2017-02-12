@@ -12,7 +12,7 @@ pipeline {
 post {
         success {
 	sh 'git config --global user.email "0851967@hr.nl"'
-	sh 'git config --global user.name "HRO"'
+	sh 'git config --global user.name "LambdaNL"'
 	sh 'git checkout master'
 	sh 'git pull origin master'
 	sh 'git merge origin/development'
