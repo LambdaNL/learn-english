@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+		sh 'pip3 install -r ./requirements.txt'
                 sh 'python3 ./learn_english/manage.py test'
 		sh 'python3 ./learn_english/manage.py runserver'
             }
