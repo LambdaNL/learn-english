@@ -13,6 +13,7 @@ post {
         success {
 	sh 'git config --global user.email "0851967@hr.nl"'
 	sh 'git config --global user.name "LambdaNL"'
+	sh 'git remote set-url origin git@github.com:Datastreamx/learn-english.git'	
 	sh 'git checkout master'
 	sh 'git pull origin master'
 	sh 'git merge origin/development'
