@@ -16,7 +16,8 @@ post {
 	    sh "git push origin master"
         }
         failure {
-            mail to: 0851967@hr.nl, subject: 'The Pipeline failed :('
+            mail to: '0851967@hr.nl',
+		 subject: 'The Pipeline failed :('
         }
     }
 }
