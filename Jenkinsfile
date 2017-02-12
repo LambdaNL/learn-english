@@ -16,7 +16,7 @@ post {
 	    sh 'git push origin master'
         }
         failure {
-            sh 'echo "Build failed!"'
+            sh 'echo Build failed!'
         }
     }
 }
