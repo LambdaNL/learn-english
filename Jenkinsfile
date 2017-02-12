@@ -18,6 +18,7 @@ post {
         failure {
             mail to: '0851967@hr.nl',
 		 subject: 'The Pipeline failed :('
+		  body: "Something is wrong with learn-english"
         }
     }
 }
