@@ -61,7 +61,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'learn_english.urls'
+ROOT_URLCONF = 'learnenglish.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'learn_english.wsgi.application'
+WSGI_APPLICATION = 'learnenglish.wsgi.application'
 
 
 # Database
@@ -110,6 +110,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+FIXTURE_DIRS = (
+   'learnenglish/fixtures.json',
+)
 
 
 # Internationalization
