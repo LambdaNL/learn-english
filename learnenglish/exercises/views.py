@@ -75,6 +75,34 @@ def nouns(request, level):
     else:
         return render(request, 'exercises/nouns/nouns.html')
 
+def startQuestionNouns(request):
+    models.OpenQuestion.objects.create(category="A1", question_1="I don't have much ... . (work)", answer="work")
+    models.OpenQuestion.objects.create(category="A1", question_2="There are a lot of ... . (chair)", answer="chairs")
+    models.OpenQuestion.objects.create(category="A1", question_3="The farmer loaded his cart with ... of fresh vegetables. (box)", answer="boxes")
+    models.OpenQuestion.objects.create(category="A1", question_4="There are many ... . (beach)", answer="beaches")
+    models.OpenQuestion.objects.create(category="A1", question_5="Do you like this kind of ... . (music)", answer="music")
+    models.OpenQuestion.objects.create(category="A2", question_1="He quickly reads a ... . (book)", answer="book")
+    models.OpenQuestion.objects.create(category="A2", question_2="Mandy is a pretty ... . (girl)", answer="girl")
+    models.OpenQuestion.objects.create(category="A2", question_3="The class is loud ... . (today)", answer="today")
+    models.OpenQuestion.objects.create(category="A2", question_4="Max is a good ... . (singer)", answer="singer")
+    models.OpenQuestion.objects.create(category="A2", question_5="You can easily open this ... . (tin)", answer="tin")
+    models.OpenQuestion.objects.create(category="B1", question_1="The ... on trees produce oxygen. (leave)", answer="leaves")
+    models.OpenQuestion.objects.create(category="B1", question_2="I now pronounce you .... and wife (husband)", answer="husband")
+    models.OpenQuestion.objects.create(category="B1", question_3="My .... gave me the wrong grade(teacher)", answer="teacher")
+    models.OpenQuestion.objects.create(category="B1", question_4="... on the wall who is the prettiest of them all? (mirror)", answer="mirror")
+    models.OpenQuestion.objects.create(category="B1", question_5="Do you like this kind of ... . (music)", answer="music")
+    models.OpenQuestion.objects.create(category="B2", question_1="I set my ..... clock for 7am. (alarm)", answer="alarm")
+    models.OpenQuestion.objects.create(category="B2", question_2="Cooking in a clean ... makes me happy (kitchen)", answer="kitchen")
+    models.OpenQuestion.objects.create(category="B2", question_3="After 16 weeks of .... your belly would expand sooner (pregnant)", answer="pregnancy")
+    models.OpenQuestion.objects.create(category="B2", question_4="... is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. (educate)", answer="education")
+    models.OpenQuestion.objects.create(category="B2", question_5="Give me a proper ... for breaking up with me (reason)", answer="reason")
+    models.OpenQuestion.objects.create(category="C1", question_1="You have to eat healthy  if you want to lose ... (weight)", answer="weight")
+    models.OpenQuestion.objects.create(category="C1", question_1="... is better than curing (prevention)", answer="prevention")
+    models.OpenQuestion.objects.create(category="C1", question_3="The farmer loaded his cart with ... of fresh vegetables. (box)", answer="boxes")
+    models.OpenQuestion.objects.create(category="C1", question_4="Doctors have toc recognize the ... of diseases (sympton)", answer="symptons")
+    models.OpenQuestion.objects.create(category="C1", question_5="Sperm ..... is the provision (or donation) by a male of his sper (donate)", answer="donation")
+
+
 def results(request):
     unique_users = get_unique_usernames(models.FilledOpenQuestion.objects.all())
 
