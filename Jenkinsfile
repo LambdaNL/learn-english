@@ -4,7 +4,7 @@ pipeline {
         stage('Test') {
             steps {
 		sh 'pip3 install -r ./requirements.txt'
-		sh 'cd learn_english/
+		sh 'cd learn_english/'
                 sh 'python3 ./manage.py test'
 		sh 'python3 ./manage.py check'
             }
