@@ -1,0 +1,35 @@
+{% extends 'exercises/quantifiers/quantifiers.html' %}
+{% block 'form' %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="A2/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Username:</label> <br />
+        <input type="text" name="username" />
+    </div>
+    <div class="form-group">
+        <label>Do you have (a/an) explanation for this?:</label> <br />
+        <input type="text" name="question_1" />
+    </div>
+    <div class="form-group">
+        <label>Does (each/every) student have a book?:</label> <br />
+        <input type="text" name="question_2" />
+    </div>
+    <div class="form-group">
+        <label>There is a bus (each/every) 2 hrs.:</label> <br />
+        <input type="text" name="question_3" />
+    </div>
+    <div class="form-group">
+        <label>We need (some/any) bananas.:</label> <br />
+        <input type="text" name="question_4" />
+    </div>
+    <div class="form-group">
+        <label>You can’t buy (some/any) posters in this shop.:</label> <br />
+        <input type="text" name="question_5" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

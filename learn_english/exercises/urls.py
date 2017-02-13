@@ -20,11 +20,12 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r"^exercise/(?P<name>verbs|adverbs|imperatives|gerund)/(?P<level>A1|A2|B1|B2|C1|.*)", views.exercise, name='exercise'),
+    url(r"^exercise/(?P<name>verbs|adverbs|imperatives|quantifiers|gerund)/(?P<level>A1|A2|B1|B2|C1|.*)", views.exercise, name='exercise'),
     url(r"^adverbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.adverbs, name='adverbs'),
     url(r"^verbs/(?P<level>A1|A2|B1|B2|C1|.*)", views.verbs, name='verbs'),
     url(r"^imperatives/(?P<level>A1|A2|B1|B2|C1|.*)", views.imperatives, name='imperatives'),
     url(r"^gerund/(?P<level>A1|A2|B1|B2|C1|.*)", views.gerund, name='gerund'),
+    url(r"^quantifiers/(?P<level>A1|A2|B1|B2|C1|.*)", views.quantifiers, name='quantifiers'),
     url(r'^results/', views.results, name='results'),
     url(r'^startg/', views.startg, name='startg'),
 ]

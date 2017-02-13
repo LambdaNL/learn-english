@@ -128,7 +128,29 @@ def imperatives(request, level):
     else:
         return render(request, 'exercises/imperatives/imperatives.html')
 
+#quantifiers
+def quantifiers(request, level):
+    if request.method != 'POST' and level != '':
+        return render_to_response('exercises/quantifiers/' + level + '.html',
+                                  {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                  context_instance=RequestContext(request))
 
+    elif request.method == 'POST':
+        for q in models.OpenQuestion.objects.filter(category=level):
+            if request.POST[str(q.pk)] != '':
+                foq = models.FilledOpenQuestion(
+                    username=request.POST['username'],
+                    question=q.question,
+                    answer=request.POST[str(q.pk)])
+                foq.save()
+            else:
+                render_to_response('exercises/quantifiers/' + level + '.html',
+                                   {'open_questions': models.OpenQuestion.objects.filter(category=level)},
+                                   context_instance=RequestContext(request))
+
+        return render_to_response('exercises/index.html', context_instance=RequestContext(request))
+    else:
+        return render(request, 'exercises/quantifiers/quantifiers.html')
 
 def results(request):
     unique_users = get_unique_usernames(models.FilledOpenQuestion.objects.all())
