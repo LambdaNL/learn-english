@@ -3,7 +3,7 @@ from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from . import models
 
-from .score_calculator import *
+from .scorecalculator import *
 
 
 def index(request):

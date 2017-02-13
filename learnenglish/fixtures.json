@@ -16,6 +16,15 @@
       "question": "She ... a letter (to write)",
       "answer": "writes"
     }
+  },
+  {
+    "model": "exercises.OpenQuestion",
+    "pk": 2,
+    "fields": {
+      "category": "A1",
+      "question": "She ... a speech (to give)",
+      "answer": "gives"
+    }
   }
 
 
