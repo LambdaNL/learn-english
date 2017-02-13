@@ -1,5 +1,5 @@
+from . import models, scorecalculator
 from django.test import TestCase
-from . import models, score_calculator
 from django.test import Client
 
 
@@ -49,11 +49,11 @@ class AdverbsTestCase(TestCase):
 
     def test_get_unique_names(self):
         names = models.FilledOpenQuestion.objects.all()
-        unique_names = score_calculator.get_unique_usernames(names)
+        unique_names = scorecalculator.get_unique_usernames(names)
         self.assertEquals(2, len(unique_names))
 
     def test_get_correct_amount(self):
-       self.assertEquals(2, score_calculator.get_correct_amount('foo'))
+       self.assertEquals(2, scorecalculator.get_correct_amount('foo'))
 
     def test_get_incorrect_amount(self):
-       self.assertEquals(0, score_calculator.get_incorrect_amount('foo'))
+       self.assertEquals(0, scorecalculator.get_incorrect_amount('foo'))
